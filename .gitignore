@@ -1,0 +1,20 @@
+# Compiled files
+*.tfstate
+*.tfstate*
+*.tfstate.lock.info
+
+# logs
+*.log
+
+# Local .terraform directories
+**/.terraform/*
+
+# Sensitive data
+*.tfvars
+
+# Override files are usually used to override resources locally so no need to
+# check them in
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
