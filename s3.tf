@@ -2,7 +2,7 @@
 
 resource "aws_vpc_endpoint" "private_s3_endpoint" {
   vpc_id       = aws_vpc.main.id
-  service_name = "com.amazonaws.${var.region}.s3"
+  service_name = "com.amazonaws.${var.aws_region}.s3"
   route_table_ids = [
     aws_vpc.main.main_route_table_id,
     aws_route_table.public_rt.id
