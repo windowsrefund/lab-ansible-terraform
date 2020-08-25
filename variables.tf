@@ -3,6 +3,7 @@ variable aws_region {
 }
 
 variable aws_profile {}
+variable local_ip {}
 variable route53_primary_zone {}
 variable vpc_cidr {}
 variable environment {}
