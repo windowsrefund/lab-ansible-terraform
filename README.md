@@ -1,3 +1,5 @@
 # lab-ansible-terraform
 
-https://linuxacademy.com/cp/courses/lesson/course/1744
+[LinuxAcademy Course](https://linuxacademy.com/cp/courses/lesson/course/6936)
+
+(diagram.png)
