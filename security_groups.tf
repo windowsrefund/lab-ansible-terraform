@@ -4,6 +4,7 @@ resource "aws_security_group" "jenkins_lb_sg" {
   name        = "jenkins-lb-sg"
   description = "Manage traffic for Jenkins SG"
   vpc_id      = aws_vpc.vpc_master.id
+
   ingress {
     description = "Allow 443 from anywhere"
     from_port   = 443
@@ -11,6 +12,7 @@ resource "aws_security_group" "jenkins_lb_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
   ingress {
     description = "Allow 80 from anywhere for redirection"
     from_port   = 80
@@ -18,6 +20,7 @@ resource "aws_security_group" "jenkins_lb_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
   egress {
     from_port   = 0
     to_port     = 0
@@ -63,11 +66,11 @@ resource "aws_security_group" "jenkins_sg" {
 }
 
 # SG for Jenkins in us-west-2
-resource "aws_security_group" "jenkins_sg_oregon" {
+resource "aws_security_group" "jenkins_sg_worker" {
   provider    = aws.region_worker
-  name        = "jenkins-sg-oregon"
+  name        = "jenkins-sg-worker"
   description = "Allow traffic from us-east-1"
-  vpc_id      = aws_vpc.vpc_master_oregon.id
+  vpc_id      = aws_vpc.vpc_worker.id
   ingress {
     description = "Allow SSH from our public IP"
     from_port   = 22
